@@ -1,0 +1,328 @@
+Prompt para Replit – Portfolio Web Profesional (Estático)
+
+Actuá como un desarrollador web senior y diseñador UX/UI.
+
+Quiero crear un sitio web personal profesional para un recién graduado en Ingeniería en Informática que busca su primer empleo en IT.
+
+El sitio debe ser simple, serio y técnico, pensado para que reclutadores y entrevistadores técnicos puedan entender rápidamente mi perfil, mis intereses y mis proyectos académicos.
+
+Perfil del usuario
+
+Recién graduado en Ingeniería en Informática
+
+Experiencia principalmente académica y en proyectos personales
+
+Intereses técnicos principales:
+
+Backend
+
+Python
+
+Machine Learning
+
+Visión por Computadora
+
+Ciberseguridad
+
+Sin experiencia laboral formal en IT (esto debe verse como algo normal y bien presentado)
+
+Objetivo del sitio
+
+Mostrar mi perfil profesional
+
+Presentar proyectos académicos y técnicos
+
+Dar foco a 2 proyectos académicos destacados
+
+Facilitar el contacto profesional
+
+Dar una imagen minimalista, prolija y profesional
+
+Requisitos técnicos (obligatorios)
+
+Usar HTML, CSS y JavaScript puro
+
+NO usar frameworks
+
+Diseño responsive (mobile-first)
+
+Código simple, limpio y comentado
+
+Sitio 100% estático
+
+🚫 Restricciones explícitas (muy importante)
+
+NO backend
+
+NO base de datos
+
+NO APIs
+
+NO fetch
+
+NO JSON externo
+
+NO CMS
+
+Toda la información debe estar:
+
+Directamente en el HTML
+o
+
+En un array dentro de script.js
+
+Compatible con GitHub Pages sin configuración adicional.
+
+Manejo de imágenes
+
+Imágenes opcionales
+
+Ruta: /assets/img/
+
+Si no hay imagen:
+
+La card no debe dejar espacio vacío
+
+Agregar o quitar imágenes:
+
+Solo editar HTML o una propiedad image
+
+Estructura del sitio
+1. Hero
+
+Nombre completo
+
+Título profesional
+(Ingeniero en Informática – Backend & AI Junior)
+
+Resumen breve orientado a aprendizaje y proyectos
+
+2. Sobre mí
+
+Formación académica
+
+Perfil técnico
+
+Intereses:
+
+Backend
+
+Python
+
+ML
+
+Visión por Computadora
+
+Ciberseguridad
+
+3. Proyectos académicos
+
+Mostrar proyectos en cards.
+
+Cada card incluye:
+
+Imagen opcional
+
+Título
+
+Descripción breve
+
+Tecnologías
+
+GitHub (opcional)
+
+⭐ Proyectos destacados (muy importante)
+
+Debe haber exactamente 2 proyectos destacados, claramente identificables.
+
+Proyectos destacados obligatorios:
+
+Sistema de estimación de rendimiento en viñedos (Visión por Computadora / ML)
+
+Sistema de monitoreo y análisis de red (UniFi Controller)
+
+Estos proyectos deben:
+
+Tener un badge visual discreto
+(ej: “Proyecto destacado”, “Proyecto principal”)
+
+Destacarse sutilmente del resto:
+
+Borde
+
+Fondo
+
+Etiqueta
+
+Sin romper el estilo minimalista
+
+🔍 Detalle expandible (solo proyectos destacados)
+
+Los proyectos destacados deben tener un botón “Ver más”.
+
+Al activarlo:
+
+Se abre una mini ventana / panel / modal
+
+Sin salir de la página
+
+Implementado solo con:
+
+HTML
+
+CSS
+
+JavaScript puro
+
+El detalle expandido debe mostrar:
+
+Título del proyecto
+
+Descripción técnica detallada
+
+Contexto académico
+
+Problema abordado
+
+Enfoque técnico
+
+Aprendizajes clave
+
+Requisitos UX:
+
+Animación suave
+
+Fácil de cerrar
+
+Responsive
+
+No intrusivo
+
+4. Tecnologías
+
+Grid simple con:
+
+Python
+
+Java
+
+SQL
+
+Git
+
+Linux
+
+Machine Learning
+
+Computer Vision
+
+Seguridad Informática
+
+5. Contacto
+
+Email
+
+LinkedIn
+
+GitHub
+
+Comentarios en el código
+
+Comentar:
+
+Cómo marcar un proyecto como destacado
+
+Cómo editar el contenido del detalle expandido
+
+Cómo agregar o quitar imágenes
+
+Cómo agregar nuevos proyectos
+
+Entregable
+
+index.html
+
+styles.css
+
+script.js
+
+Explicar:
+
+Personalización
+
+Proyectos destacados
+
+Detalles expandibles
+
+Deploy en GitHub Pages
+
+🧠 TEXTO EXACTO – DETALLE EXPANDIDO DE CADA PROYECTO
+
+Estos textos están escritos como los leería un reclutador técnico.
+Podés copiarlos tal cual en el modal/expandible.
+
+📌 Proyecto destacado 1
+Sistema de estimación de rendimiento en viñedos mediante visión por computadora
+
+Contexto
+Proyecto académico de investigación orientado a agricultura de precisión, enfocado en la estimación de rendimiento de racimos de uvas en viñedos reales.
+
+Problema
+La estimación tradicional del rendimiento es manual, costosa y propensa a errores. Además, los viñedos presentan desafíos reales como variabilidad de iluminación, oclusión de racimos y condiciones no controladas.
+
+Solución propuesta
+Diseño de un pipeline basado en visión por computadora y machine learning para detectar racimos de uvas y estimar su rendimiento a partir de imágenes RGB / RGB-D, evaluando la viabilidad técnica en condiciones reales de campo.
+
+Enfoque técnico
+
+Análisis del estado del arte en detección de racimos
+
+Evaluación de técnicas de visión RGB y profundidad
+
+Preprocesamiento de imágenes en entornos no controlados
+
+Diseño de un pipeline reproducible (ingesta, procesamiento, evaluación)
+
+Aprendizajes clave
+
+Adaptación de modelos de CV a escenarios reales
+
+Importancia de la calidad de datos
+
+Limitaciones prácticas más allá del modelo
+
+Pensamiento de ingeniería aplicado a investigación
+
+📌 Proyecto destacado 2
+Sistema de monitoreo y análisis de red a partir de UniFi Controller
+
+Contexto
+Proyecto técnico orientado al análisis de métricas de red y monitoreo de infraestructura, utilizando datos reales provenientes de un controlador UniFi.
+
+Problema
+La información de red suele estar distribuida y no siempre es fácil de analizar o reutilizar para generar métricas, estadísticas o visualizaciones útiles.
+
+Solución propuesta
+Desarrollo de un sistema para recolectar métricas desde UniFi Controller, procesarlas y analizarlas, permitiendo generar estadísticas, mapas de calor y datos históricos.
+
+Enfoque técnico
+
+Recolección estructurada de métricas de red
+
+Backend ligero en Python
+
+Modelado de datos y persistencia
+
+Consideraciones de escalabilidad y seguridad
+
+Diseño pensando en expansión futura (más APs)
+
+Aprendizajes clave
+
+Integración con sistemas reales
+
+Diseño backend orientado a datos
+
+Pensamiento en seguridad y escalabilidad
+
+Trabajo con infraestructura de red
