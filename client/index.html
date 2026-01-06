@@ -1,15 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Ingeniero en Informática</title>
+    <meta name="description" content="Portafolio profesional de Ingeniero en Informática especializado en Backend, Python y Machine Learning.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font for code/technical feel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fira+Code:wght@300..700&family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <header id="hero" class="section">
+            <h1 class="name">Tu Nombre Completo</h1>
+            <h2 class="title">Ingeniero en Informática – Backend & AI Junior</h2>
+            <p class="summary">
+                Recién graduado apasionado por el desarrollo de software y la inteligencia artificial. 
+                Enfocado en construir soluciones robustas en Backend y aplicar Machine Learning a problemas reales.
+            </p>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h3 class="section-title">Sobre mí</h3>
+            <div class="about-content">
+                <div class="education">
+                    <h4>Formación Académica</h4>
+                    <p>Ingeniería en Informática</p>
+                    <p class="institution">Universidad [Nombre de tu Universidad]</p>
+                    <p class="date">Graduado 2025</p>
+                </div>
+                <div class="interests">
+                    <h4>Intereses Técnicos</h4>
+                    <ul class="tag-list">
+                        <li>Backend</li>
+                        <li>Python</li>
+                        <li>Machine Learning</li>
+                        <li>Visión por Computadora</li>
+                        <li>Ciberseguridad</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h3 class="section-title">Proyectos Académicos</h3>
+            <div id="projects-grid" class="projects-grid">
+                <!-- Projects will be injected here by script.js -->
+            </div>
+        </section>
+
+        <!-- Technologies Section -->
+        <section id="skills" class="section">
+            <h3 class="section-title">Tecnologías</h3>
+            <div class="skills-grid">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Computer Vision</span>
+                <span class="skill-tag">Seguridad Informática</span>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h3 class="section-title">Contacto</h3>
+            <div class="contact-links">
+                <a href="mailto:tu.email@ejemplo.com" class="contact-btn">Email</a>
+                <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="contact-btn">LinkedIn</a>
+                <a href="https://github.com/tu-usuario" target="_blank" class="contact-btn">GitHub</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for Project Details -->
+    <div id="project-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <div id="modal-body">
+                <!-- Modal content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
