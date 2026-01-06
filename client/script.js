@@ -33,7 +33,7 @@ const projects = [
         title: "Sistema de monitoreo y análisis de red (UniFi)",
         shortDesc: "Recolección y análisis de métricas de red desde UniFi Controller.",
         tech: ["Python", "API REST", "Data Analysis", "Networking"],
-        image: null, // Sin imagen: no dejará espacio vacío
+        image: "assets/img/unifi.jpg", // Ahora con soporte para imagen
         featured: true,
         details: {
             context: "Proyecto técnico orientado al análisis de métricas de red y monitoreo de infraestructura, utilizando datos reales provenientes de un controlador UniFi.",
@@ -55,28 +55,6 @@ const projects = [
         },
         links: {
             github: "https://github.com/usuario/repo-unifi"
-        }
-    },
-    {
-        id: "project-3",
-        title: "API RESTful de Gestión de Tareas",
-        shortDesc: "API simple para gestión de tareas con autenticación JWT.",
-        tech: ["Node.js", "Express", "PostgreSQL"],
-        image: null,
-        featured: false,
-        links: {
-            github: "#"
-        }
-    },
-    {
-        id: "project-4",
-        title: "Script de Automatización de Backups",
-        shortDesc: "Script en Bash para backup incremental de servidores Linux.",
-        tech: ["Bash", "Linux", "Cron"],
-        image: null,
-        featured: false,
-        links: {
-            github: "#"
         }
     }
 ];
