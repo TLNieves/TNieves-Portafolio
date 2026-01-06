@@ -5,6 +5,7 @@ const projects = [
         title: "Sistema de estimación de rendimiento en viñedos",
         shortDesc: "Pipeline de Visión por Computadora y ML para estimar rendimiento de uvas en campo.",
         tech: ["Python", "OpenCV", "PyTorch", "Pandas"],
+        image: "assets/img/vinedo.jpg", // Ruta de la imagen (Opcional)
         featured: true,
         details: {
             context: "Proyecto académico de investigación orientado a agricultura de precisión, enfocado en la estimación de rendimiento de racimos de uvas en viñedos reales.",
@@ -24,7 +25,7 @@ const projects = [
             ]
         },
         links: {
-            github: "https://github.com/usuario/repo-uvas" // Opcional
+            github: "https://github.com/usuario/repo-uvas"
         }
     },
     {
@@ -32,11 +33,12 @@ const projects = [
         title: "Sistema de monitoreo y análisis de red (UniFi)",
         shortDesc: "Recolección y análisis de métricas de red desde UniFi Controller.",
         tech: ["Python", "API REST", "Data Analysis", "Networking"],
+        image: null, // Sin imagen: no dejará espacio vacío
         featured: true,
         details: {
             context: "Proyecto técnico orientado al análisis de métricas de red y monitoreo de infraestructura, utilizando datos reales provenientes de un controlador UniFi.",
             problem: "La información de red suele estar distribuida y no siempre es fácil de analizar o reutilizar para generar métricas, estadísticas o visualizaciones útiles.",
-            solution: "Desarrollo de un sistema para recolectar métricas desde UniFi Controller, procesarlas y analizarlas, permitiendo generar estadísticas, mapas de calor y datos históricos.",
+            solution: "Diseño de un sistema para recolectar métricas desde UniFi Controller, procesarlas y analizarlas, permitiendo generar estadísticas, mapas de calor y datos históricos.",
             technicalApproach: [
                 "Recolección estructurada de métricas de red",
                 "Backend ligero en Python",
@@ -60,6 +62,7 @@ const projects = [
         title: "API RESTful de Gestión de Tareas",
         shortDesc: "API simple para gestión de tareas con autenticación JWT.",
         tech: ["Node.js", "Express", "PostgreSQL"],
+        image: null,
         featured: false,
         links: {
             github: "#"
@@ -70,6 +73,7 @@ const projects = [
         title: "Script de Automatización de Backups",
         shortDesc: "Script en Bash para backup incremental de servidores Linux.",
         tech: ["Bash", "Linux", "Cron"],
+        image: null,
         featured: false,
         links: {
             github: "#"
@@ -89,6 +93,16 @@ function renderProjects() {
         const card = document.createElement('div');
         card.className = `project-card ${project.featured ? 'featured' : ''}`;
         
+        // Imagen opcional: Si no hay imagen, no se genera el HTML
+        let imageHTML = '';
+        if (project.image) {
+            imageHTML = `
+                <div class="project-image-container">
+                    <img src="${project.image}" alt="${project.title}" class="project-image">
+                </div>
+            `;
+        }
+
         // Badge de destacado
         let badgeHTML = '';
         if (project.featured) {
@@ -109,19 +123,23 @@ function renderProjects() {
 
         card.innerHTML = `
             ${badgeHTML}
-            <h4 class="project-title">${project.title}</h4>
-            <p class="project-desc">${project.shortDesc}</p>
-            <div class="project-tech">
-                ${project.tech.map(t => `<span>${t}</span>`).join(' • ')}
-            </div>
-            <div class="card-actions">
-                ${viewMoreHTML}
-                ${linksHTML}
+            ${imageHTML}
+            <div class="project-content">
+                <h4 class="project-title">${project.title}</h4>
+                <p class="project-desc">${project.shortDesc}</p>
+                <div class="project-tech">
+                    ${project.tech.map(t => `<span>${t}</span>`).join(' • ')}
+                </div>
+                <div class="card-actions">
+                    ${viewMoreHTML}
+                    ${linksHTML}
+                </div>
             </div>
         `;
 
         projectsContainer.appendChild(card);
     });
+
 
     // Agregar event listeners a botones "Ver más"
     document.querySelectorAll('.view-details-btn').forEach(btn => {
