@@ -3,9 +3,9 @@ const projects = [
     {
         id: "project-1",
         title: "Sistema de estimación de rendimiento en viñedos",
-        shortDesc: "Pipeline de Visión por Computadora y ML para estimar rendimiento de uvas en campo.",
+        shortDesc: "Actualmente me encuentro desarrollando un pipeline de Visión por Computadora y ML para estimar rendimiento de uvas en campo.",
         tech: ["Python", "OpenCV", "PyTorch", "Pandas"],
-        image: "assets/img/vinedo.jpg", // Ruta de la imagen (Opcional)
+        image: "assets/img/vinedo.jpg",
         featured: true,
         details: {
             context: "Proyecto académico de investigación orientado a agricultura de precisión, enfocado en la estimación de rendimiento de racimos de uvas en viñedos reales.",
@@ -24,16 +24,16 @@ const projects = [
                 "Pensamiento de ingeniería aplicado a investigación"
             ]
         },
-        links: {
-            github: "https://github.com/usuario/repo-uvas"
-        }
+        links: [
+            { label: "GitHub", url: "https://github.com/usuario/repo-uvas" }
+        ]
     },
     {
         id: "project-2",
         title: "Sistema de monitoreo y análisis de red (UniFi)",
         shortDesc: "Recolección y análisis de métricas de red desde UniFi Controller.",
         tech: ["Python", "API REST", "Data Analysis", "Networking"],
-        image: "assets/img/unifi.jpg", // Ahora con soporte para imagen
+        image: "assets/img/unifi.png",
         featured: true,
         details: {
             context: "Proyecto técnico orientado al análisis de métricas de red y monitoreo de infraestructura, utilizando datos reales provenientes de un controlador UniFi.",
@@ -53,11 +53,47 @@ const projects = [
                 "Trabajo con infraestructura de red"
             ]
         },
-        links: {
-            github: "https://github.com/usuario/repo-unifi"
-        }
+        links: [
+            { label: "GitHub", url: "https://github.com/usuario/repo-unifi" }
+        ]
+    },
+    {
+        id: "project-3",
+        title: "Sistema de reconocimiento facial para control de acceso",
+        shortDesc: "Sistema de reconocimiento facial diseñado para controlar accesos, integrando frontend, backend y un servicio intermediario de comunicación con dispositivos físicos.",
+        tech: ["Flask", "Visión por Computadora", "React", "AWS"],
+        image: "assets/img/facial.jpg", // Espacio para imagen como los anteriores
+        featured: true,
+        details: {
+            context: "Proyecto personal diseñado para la gestión automatizada de identidades y accesos físicos.",
+            problem: "La necesidad de sistemas de seguridad biométricos eficientes y escalables para el control de personal.",
+            solution: "Implementación de una arquitectura de microservicios que procesa feeds de video en tiempo real y gestiona permisos de acceso.",
+            technicalApproach: [
+                "Diseño de frontend interactivo en React",
+                "Desarrollo de API robusta en Flask",
+                "Implementación de modelos de reconocimiento facial con OpenCV/Dlib",
+                "Integración con servicios de AWS para almacenamiento y cómputo"
+            ],
+            keyLearnings: [
+                "Integración de sistemas heterogéneos (SW/HW)",
+                "Optimización de latencia en procesamiento de video",
+                "Gestión de servicios en la nube (AWS)",
+                "Seguridad y privacidad de datos biométricos"
+            ]
+        },
+        links: [
+            { label: "Frontend", url: "https://github.com/usuario/face-front" },
+            { label: "Backend", url: "https://github.com/usuario/face-back" }
+        ]
     }
 ];
+
+// GUÍA PARA MANEJO DE PROYECTOS:
+// 1. Para agregar un proyecto: Añade un objeto al array 'projects' con un 'id' único.
+// 2. Para habilitar "Ver más": Establece 'featured' en true y define el objeto 'details'.
+// 3. Para cambiar textos: Edita las propiedades 'title', 'shortDesc' o los campos en 'details'.
+// 4. Para imágenes: Guarda la imagen en 'assets/img/' y actualiza la propiedad 'image'.
+// 5. Para links: El campo 'links' acepta un array de objetos { label, url }, permitiendo múltiples botones.
 
 // Referencias al DOM
 const projectsContainer = document.getElementById('projects-grid');
@@ -67,11 +103,12 @@ const closeModalBtn = document.getElementById('close-modal');
 
 // Función para renderizar proyectos
 function renderProjects() {
+    projectsContainer.innerHTML = '';
     projects.forEach(project => {
         const card = document.createElement('div');
         card.className = `project-card ${project.featured ? 'featured' : ''}`;
         
-        // Imagen opcional: Si no hay imagen, no se genera el HTML
+        // Imagen opcional: Siempre con contenedor para mantener el borde
         let imageHTML = '';
         if (project.image) {
             imageHTML = `
@@ -79,28 +116,25 @@ function renderProjects() {
                     <img src="${project.image}" alt="${project.title}" class="project-image">
                 </div>
             `;
+        } else {
+            imageHTML = `<div class="project-image-container" style="background: var(--card-bg)"></div>`;
         }
 
-        // Badge de destacado
-        let badgeHTML = '';
-        if (project.featured) {
-            badgeHTML = `<span class="featured-badge">Destacado</span>`;
-        }
-
-        // Links
+        // Renderizado de links (soporta múltiples repositorios)
         let linksHTML = '';
-        if (project.links && project.links.github) {
-            linksHTML += `<a href="${project.links.github}" target="_blank" class="btn">GitHub</a>`;
+        if (Array.isArray(project.links)) {
+            linksHTML = project.links.map(link => 
+                `<a href="${link.url}" target="_blank" class="btn">${link.label}</a>`
+            ).join('');
         }
 
-        // Botón "Ver más" solo para destacados
+        // Botón "Ver más"
         let viewMoreHTML = '';
-        if (project.featured) {
+        if (project.featured && project.details) {
             viewMoreHTML = `<button class="btn view-details-btn" data-id="${project.id}">Ver más &rarr;</button>`;
         }
 
         card.innerHTML = `
-            ${badgeHTML}
             ${imageHTML}
             <div class="project-content">
                 <h4 class="project-title">${project.title}</h4>
@@ -118,7 +152,6 @@ function renderProjects() {
         projectsContainer.appendChild(card);
     });
 
-
     // Agregar event listeners a botones "Ver más"
     document.querySelectorAll('.view-details-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -133,9 +166,7 @@ function openModal(id) {
     const project = projects.find(p => p.id === id);
     if (!project || !project.details) return;
 
-    // Construir contenido del modal
     const details = project.details;
-    
     let approachList = details.technicalApproach.map(item => `<li>${item}</li>`).join('');
     let learningsList = details.keyLearnings.map(item => `<li>${item}</li>`).join('');
 
@@ -165,7 +196,7 @@ function openModal(id) {
     `;
 
     modal.classList.add('show');
-    document.body.style.overflow = 'hidden'; // Evitar scroll de fondo
+    document.body.style.overflow = 'hidden';
 }
 
 // Función para cerrar modal
@@ -174,14 +205,9 @@ function closeModal() {
     document.body.style.overflow = '';
 }
 
-// Event Listeners para el modal
 closeModalBtn.addEventListener('click', closeModal);
-
 window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        closeModal();
-    }
+    if (e.target === modal) closeModal();
 });
 
-// Inicializar
 document.addEventListener('DOMContentLoaded', renderProjects);
