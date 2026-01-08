@@ -4,7 +4,7 @@ const projects = [
         id: "project-1",
         title: "Sistema de estimación de rendimiento en viñedos",
         shortDesc: "Actualmente me encuentro desarrollando un pipeline de Visión por Computadora y ML para estimar rendimiento de uvas en campo.",
-        tech: ["Python", "OpenCV", "PyTorch", "Pandas"],
+        tech: ["Python", "OpenCV", "PyTorch", "Pandas", "Sam3"],
         image: "assets/img/vinedo.jpg",
         featured: true,
         details: {
@@ -19,42 +19,38 @@ const projects = [
             ],
             keyLearnings: [
                 "Adaptación de modelos de CV a escenarios reales",
-                "Importancia de la calidad de datos",
+                "Entrenamiento de modelos de Machine Learning",
                 "Limitaciones prácticas más allá del modelo",
                 "Pensamiento de ingeniería aplicado a investigación"
             ]
         },
-        links: [
-            { label: "GitHub", url: "https://github.com/usuario/repo-uvas" }
-        ]
     },
     {
         id: "project-2",
         title: "Sistema de monitoreo y análisis de red (UniFi)",
         shortDesc: "Recolección y análisis de métricas de red desde UniFi Controller.",
-        tech: ["Python", "API REST", "Data Analysis", "Networking"],
+        tech: ["Flask", "AWS", "Data Analysis", "UniFi API"],
         image: "assets/img/unifi.png",
         featured: true,
         details: {
-            context: "Proyecto técnico orientado al análisis de métricas de red y monitoreo de infraestructura, utilizando datos reales provenientes de un controlador UniFi.",
-            problem: "La información de red suele estar distribuida y no siempre es fácil de analizar o reutilizar para generar métricas, estadísticas o visualizaciones útiles.",
+            context: "Proyecto técnico orientado al análisis de métricas de red y monitoreo de dispositivos, utilizando datos reales provenientes de un controlador UniFi.",
+            problem: "Se busca obtener las ubicaciones recientes de un dispositivo mediante la triangulacion de señal de enrutadores asociados a un Controller de Unifi.",
             solution: "Diseño de un sistema para recolectar métricas desde UniFi Controller, procesarlas y analizarlas, permitiendo generar estadísticas, mapas de calor y datos históricos.",
             technicalApproach: [
-                "Recolección estructurada de métricas de red",
+                "Recolección estructurada de métricas de red a traves de una app movil",
                 "Backend ligero en Python",
-                "Modelado de datos y persistencia",
-                "Consideraciones de escalabilidad y seguridad",
-                "Diseño pensando en expansión futura (más APs)"
+                "Diseño de una app web para monitoreo de movimiento de dispositivos y manejo de pedidos",
+                "Diseño pensando en expansión futura (más routers, más métricas)"
             ],
             keyLearnings: [
-                "Integración con sistemas reales",
-                "Diseño backend orientado a datos",
+                "Integración con sistemas reales de monitoreo de terceros",
+                "Integracion de diferentes apps a traves de arquitecturas serverless en AWS",
                 "Pensamiento en seguridad y escalabilidad",
                 "Trabajo con infraestructura de red"
             ]
         },
         links: [
-            { label: "GitHub", url: "https://github.com/usuario/repo-unifi" }
+            { label: "GitHub", url: "https://github.com/TLNieves/MonitoreoUniFi-Backend" }
         ]
     },
     {
@@ -65,9 +61,9 @@ const projects = [
         image: "assets/img/facial.jpg", // Espacio para imagen como los anteriores
         featured: true,
         details: {
-            context: "Proyecto personal diseñado para la gestión automatizada de identidades y accesos físicos.",
+            context: "Proyecto academico diseñado para la gestión automatizada de identidades y accesos físicos.",
             problem: "La necesidad de sistemas de seguridad biométricos eficientes y escalables para el control de personal.",
-            solution: "Implementación de una arquitectura de microservicios que procesa feeds de video en tiempo real y gestiona permisos de acceso.",
+            solution: "Implementación de una arquitectura de microservicios que procesa feeds de video en tiempo real y gestiona permisos de acceso, junto con una aplicacion web diseñada para el control de los acceso a nivel granular por parte de una compania",
             technicalApproach: [
                 "Diseño de frontend interactivo en React",
                 "Desarrollo de API robusta en Flask",
@@ -78,12 +74,12 @@ const projects = [
                 "Integración de sistemas heterogéneos (SW/HW)",
                 "Optimización de latencia en procesamiento de video",
                 "Gestión de servicios en la nube (AWS)",
-                "Seguridad y privacidad de datos biométricos"
+                "Uso de modelos de Facenet para reconocimiento facial"
             ]
         },
         links: [
-            { label: "Frontend", url: "https://github.com/usuario/face-front" },
-            { label: "Backend", url: "https://github.com/usuario/face-back" }
+            { label: "Frontend", url: "https://github.com/TLNieves/ReconocimientoFacial-Frontend" },
+            { label: "Backend", url: "https://github.com/TLNieves/ReconocimientoFacial-Backend" }
         ]
     }
 ];
