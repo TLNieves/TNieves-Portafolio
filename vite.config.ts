@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
 
   // IMPORTANTE: debe coincidir con el nombre del repo
-  base: "/tomas-nieves-portfolio/",
+  base: "/TNieves-Portafolio/",
 
   root: path.resolve(__dirname, "client"),
 
